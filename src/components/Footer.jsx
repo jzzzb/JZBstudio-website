@@ -1,6 +1,7 @@
 import React from "react";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { SiThreads } from "react-icons/si"; // Threads icon from react-icons/si
 
 const Footer = () => {
   return (
@@ -51,6 +52,22 @@ const Footer = () => {
               className="hover:text-gray-400"
             >
               <FaXTwitter />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61578964426075&sk=photos" // placeholder link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              href="https://threads.net/jzbstudioz" // placeholder link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400"
+            >
+              <SiThreads />
             </a>
           </div>
         </div>

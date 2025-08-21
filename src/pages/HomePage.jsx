@@ -3,7 +3,7 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ServiceSection from "../components/ServicesSection";
 import ProjectsSection from "../components/ProjectsSection";
-import ContactSection from "../components/ContactSection";
+import ContactFormOnly from "../components/ContactFormOnly"; // <-- new component
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Galaxy from "../components/silk"; // Import your Galaxy animation
@@ -11,7 +11,6 @@ import Galaxy from "../components/silk"; // Import your Galaxy animation
 const HomePage = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Background Animation */}
       <div className="absolute inset-0 z-0">
         <Galaxy
           mouseRepulsion={true}
@@ -23,14 +22,13 @@ const HomePage = () => {
         />
       </div>
 
-      {/* Page Content */}
       <div className="relative z-10">
         <Navbar />
         <HeroSection />
         <ProjectsSection />
         <ServiceSection />
         <AboutSection />
-        <ContactSection />
+        <ContactFormOnly /> {/* only form now */}
         <Footer />
       </div>
     </div>

@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import React, { useState } from "react";
+import { motion, useSpring } from "framer-motion";
 
 const springValues = {
   damping: 40, // smooth
@@ -8,26 +8,8 @@ const springValues = {
 };
 
 const ProjectCard = ({ project, onSelectProject }) => {
-  const ref = useRef(null);
-
-  const rotateX = useSpring(useMotionValue(0), springValues);
-  const rotateY = useSpring(useMotionValue(0), springValues);
   const scale = useSpring(1, springValues);
-
   const [isHovered, setIsHovered] = useState(false);
-
-  function handleMouse(e) {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left - rect.width / 2;
-    const offsetY = e.clientY - rect.top - rect.height / 2;
-
-    const rotationX = (offsetY / (rect.height / 2)) * -10;
-    const rotationY = (offsetX / (rect.width / 2)) * 10;
-
-    rotateX.set(rotationX);
-    rotateY.set(rotationY);
-  }
 
   function handleMouseEnter() {
     setIsHovered(true);
@@ -37,27 +19,18 @@ const ProjectCard = ({ project, onSelectProject }) => {
   function handleMouseLeave() {
     setIsHovered(false);
     scale.set(1);
-    rotateX.set(0);
-    rotateY.set(0);
   }
 
   return (
     <figure
-      ref={ref}
-      className="relative w-full h-full perspective-1000 cursor-pointer"
-      onMouseMove={handleMouse}
+      className="relative w-full h-full cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => onSelectProject(project)}
     >
       <motion.div
         className="relative rounded-xl overflow-hidden shadow-lg"
-        style={{
-          rotateX,
-          rotateY,
-          scale,
-          transformStyle: "preserve-3d",
-        }}
+        style={{ scale }}
       >
         {/* Project image */}
         <motion.img
