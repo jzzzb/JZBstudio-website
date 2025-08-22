@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/JZBstudio-website/static/css/main.6d4147be.css",
-    "main.js": "/JZBstudio-website/static/js/main.0e7c32fe.js",
+    "main.js": "/JZBstudio-website/static/js/main.2e76a4ad.js",
     "static/media/MonumentExtended-Regular.otf": "/JZBstudio-website/static/media/MonumentExtended-Regular.db74f7a563ec017311bc.otf",
     "index.html": "/JZBstudio-website/index.html",
     "main.6d4147be.css.map": "/JZBstudio-website/static/css/main.6d4147be.css.map",
-    "main.0e7c32fe.js.map": "/JZBstudio-website/static/js/main.0e7c32fe.js.map"
+    "main.2e76a4ad.js.map": "/JZBstudio-website/static/js/main.2e76a4ad.js.map"
   },
   "entrypoints": [
     "static/css/main.6d4147be.css",
-    "static/js/main.0e7c32fe.js"
+    "static/js/main.2e76a4ad.js"
   ]
 }
