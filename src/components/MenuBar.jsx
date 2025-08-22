@@ -73,27 +73,19 @@ export default function MenuBar() {
   };
 
   const links = [
+    { name: "Home", path: "/" },
     {
       name: "Projects",
       path: "/projects",
       submenu: [
         { name: "All", path: "/projects/all" },
-        { name: "Interiors", path: "/projects/interiors" },
         { name: "Architecture", path: "/projects/architecture" },
+        { name: "Interiors", path: "/projects/interiors" },
         { name: "Commercial", path: "/projects/commercial" },
         { name: "Elements", path: "/projects/product-design" },
       ],
     },
     { name: "Studio", path: "/studio" },
-    { name: "Blog", path: "/blog" },
-    {
-      name: "Media",
-      path: "/media",
-      submenu: [
-        { name: "News", path: "/media/news" },
-        { name: "Publications", path: "/media/publications" },
-      ],
-    },
     { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
   ];
@@ -169,14 +161,40 @@ export default function MenuBar() {
         </ul>
       )}
 
-      {/* Mobile Menu Icon */}
+      {/* Mobile Menu Icon (animated Menu ↔ X, single toggle) */}
       {isMobile && (
-        <div className="inline-block relative z-[10000]">
-          <Menu
-            className="w-7 h-7 cursor-pointer text-white"
-            onClick={() => setMenuOpen((p) => !p)}
-          />
-        </div>
+        <button
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          className="inline-block relative z-[10000]"
+          onClick={() => setMenuOpen((p) => !p)}
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            {menuOpen ? (
+              <motion.span
+                key="icon-x"
+                initial={{ rotate: -90, opacity: 0, scale: 0.9 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                exit={{ rotate: 90, opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.2 }}
+                className="block"
+              >
+                <X className="w-7 h-7 text-white" />
+              </motion.span>
+            ) : (
+              <motion.span
+                key="icon-menu"
+                initial={{ rotate: 90, opacity: 0, scale: 0.9 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                exit={{ rotate: -90, opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.2 }}
+                className="block"
+              >
+                <Menu className="w-7 h-7 text-white" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </button>
       )}
 
       {/* Mobile Sidebar Menu */}
@@ -193,13 +211,7 @@ export default function MenuBar() {
                        shadow-2xl rounded-l-2xl z-[9999] py-6 overflow-y-auto"
             style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 100 }}
           >
-            {/* Mobile Close Button */}
-            <div className="flex justify-end pr-4 pb-4">
-              <X
-                className="w-6 h-6 cursor-pointer text-white"
-                onClick={() => setMenuOpen(false)}
-              />
-            </div>
+            {/* ⬇️ Removed the internal close button to avoid duplicate X */}
 
             <div className="px-2">
               {links.map((link) => {

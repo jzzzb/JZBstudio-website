@@ -9,7 +9,11 @@ import Homepage from "./pages/HomePage";
 import Project from "./pages/ProjectsPage";
 import Aboutpage from "./pages/AboutPage";
 import ServicePage from "./pages/ServicePage";
-import ContactPage from "./pages/ContactPage";
+import CareerPage from "./pages/CareerPage";
+import ContactPage from "./pages/ContactPage";// App.js
+import StudioPage from "./pages/StudioPage"; // Add this import
+
+
 
 // Animation variants
 const pageVariants = {
@@ -61,6 +65,8 @@ function App() {
             <Route path="/about" element={<Aboutpage />} />
             <Route path="/services" element={<ServicePage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/studio" element={<StudioPage/>} />
+            <Route path="/Careers" element={<CareerPage/>} />
           </Routes>
         </motion.div>
       </AnimatePresence>

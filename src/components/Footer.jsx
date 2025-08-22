@@ -13,6 +13,8 @@ const Footer = () => {
             src={`${process.env.PUBLIC_URL}/images/JZB-LOGO.svg`}
             alt="JZBStudio Logo"
             className="h-12"
+            onContextMenu={(e) => e.preventDefault()} // Disable right-click
+            draggable="false" 
           />
         </div>
 

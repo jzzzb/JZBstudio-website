@@ -69,6 +69,8 @@ const HeroSection = () => {
           src={`${process.env.PUBLIC_URL}/images/JZB-LOGO.svg`}
           alt="JZB Studio Logo"
           className="h-12 md:h-16 lg:h-24 mx-auto drop-shadow-lg"
+          onContextMenu={(e) => e.preventDefault()} // Disable right-click
+          draggable="false" 
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 2 }}
