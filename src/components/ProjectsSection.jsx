@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 import ProjectDetail from "./ProjectDetail";
 import Loader from "./Loader";
 import projects from "../data/projects";
-import "./font.css"; // reuse Monument Extended font
+import "./font.css";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -20,7 +20,7 @@ const ProjectsSection = () => {
     setTimeout(() => {
       setSelectedProject(project);
       setIsLoading(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // 🔕 Removed window.scrollTo(...)
     }, 300);
   };
 
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
     setTimeout(() => {
       setSelectedProject(null);
       setIsLoading(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // 🔕 Removed window.scrollTo(...)
     }, 300);
   };
 

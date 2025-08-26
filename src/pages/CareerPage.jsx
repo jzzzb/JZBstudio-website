@@ -1,6 +1,10 @@
 // src/pages/CareerPage.jsx
 import React, { useState } from "react";
 import Footer from "../components/Footer"; // make sure this path matches where Footer.jsx is saved
+import "../components/font.css";
+
+
+
 
 const CareerPage = () => {
   const [formData, setFormData] = useState({
@@ -43,15 +47,16 @@ const CareerPage = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="text-white text-4xl md:text-6xl font-bold">
-            JOIN OUR TEAM
+          <h1 className="text-white text-4xl md:text-6xl">
+            <h1 className="monument text-center">JOIN OUR TEAM</h1>
+
           </h1>
         </div>
       </div>
 
       {/* Vacancies Section */}
       <section className="py-12 px-6 md:px-20">
-        <h2 className="text-3xl font-bold text-center mb-8">Current Openings</h2>
+        <h2 className="text-4xl font-bold text-center mb-8 monument">CURRENT OPENINGS</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {vacancies.map((job) => (
             <div
@@ -68,7 +73,7 @@ const CareerPage = () => {
 
       {/* Application Form */}
       <section className="py-12 px-6 md:px-20 bg-gray-100">
-        <h2 className="text-3xl font-bold text-center mb-8">Apply Now</h2>
+        <h2 className="monument text-4xl font-bold text-center mb-8">APPLY NOW</h2>
         <form
           onSubmit={handleSubmit}
           className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-md"

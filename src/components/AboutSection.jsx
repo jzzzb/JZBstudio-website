@@ -11,7 +11,7 @@ const AboutSection = () => {
       >
         {/* Title */}
         <motion.h2
-          className="core-services-title text-5xl mb-8 font-bold text-black"
+          className="core-services-title text-4xl mb-8 font-bold text-black"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -49,22 +49,24 @@ const AboutSection = () => {
           transition={{ duration: 1 }}
         >
           <p>
-            At <strong>Your Firm Name</strong>, we believe architecture is more
-            than just buildings; it's about crafting experiences, fostering
-            communities, and shaping the future. With a passion for innovative
-            design and sustainable practices, we transform visions into
-            realities.
+          
           </p>
           <p>
-            Founded in 20XX, our firm has grown into a collaborative hub of
-            talented architects, designers, and engineers. We pride ourselves on
-            a client-centric approach, ensuring every project reflects the
-            unique aspirations and functional needs of its inhabitants.
+            Welcome to <strong>JZB STUDIOZ</strong> — an innovative architectural studio based
+            in Kashmir, India. We design modern homes, hospitals, commercial spaces,
+            and urban projects with a focus on sustainability and human-centered
+            design. Our expertise lies in creating residences with contemporary
+            aesthetics, healthcare facilities with smart planning, and commercial
+            spaces that inspire productivity.
+
+            
           </p>
           <p>
-            From groundbreaking urban developments to serene private residences,
-            our portfolio showcases a commitment to excellence and environmental
-            responsibility.
+           At <strong>JZB STUDIOZ</strong>, every project reflects a balance of creativity, technology,
+            and local context. Whether it’s a custom house design in Kashmir, eco-friendly
+            interiors, or large-scale master planning, we bring thoughtful ideas and
+            precision to every detail. We believe architecture should not only look
+            beautiful but also improve lifestyles, communities, and the environment.
           </p>
         </motion.div>
       </div>

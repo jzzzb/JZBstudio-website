@@ -1,3 +1,4 @@
+// Navbar.jsx
 import React, { useEffect, useState } from "react";
 import MenuBar from "./MenuBar";
 import { Link } from "react-router-dom";
@@ -22,18 +23,18 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      {/* Logo - Clickable & Right Click Disabled */}
+      {/* Logo */}
       <Link to="/">
         <img
           src={`${process.env.PUBLIC_URL}/images/JZB_ICON.svg`}
-          alt="ZBB Logo"
-          className="h-[10px] sm:h-[10px] md:h-[15px] transition-all duration-300 cursor-pointer select-none"
-          onContextMenu={(e) => e.preventDefault()} // Disable right-click
-          draggable="false" // Optional: prevents drag-save
+          alt="JZB Logo"
+          className="h-[15px] sm:h-[15px] md:h-[20px] transition-all duration-300 cursor-pointer select-none"
+          onContextMenu={(e) => e.preventDefault()}
+          draggable="false"
         />
       </Link>
 
-      {/* Menu bar */}
+      {/* Menu */}
       <MenuBar />
     </header>
   );

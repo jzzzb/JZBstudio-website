@@ -78,14 +78,12 @@ export default function MenuBar() {
       name: "Projects",
       path: "/projects",
       submenu: [
-        { name: "All", path: "/projects/all" },
         { name: "Architecture", path: "/projects/architecture" },
-        { name: "Interiors", path: "/projects/interiors" },
-        { name: "Commercial", path: "/projects/commercial" },
-        { name: "Elements", path: "/projects/product-design" },
+        { name: "Elements", path: "/projects/elements" },
       ],
     },
     { name: "Studio", path: "/studio" },
+    { name: "Blogs", path: "/Blogs" },
     { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
   ];

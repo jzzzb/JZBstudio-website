@@ -36,11 +36,11 @@ const ProjectCard = ({ project, onSelectProject }) => {
         <motion.img
           src={project.imageUrl}
           alt={project.title}
-          className="w-full h-64 object-cover"
+          className="w-full h-200 object-cover"
           style={{ borderRadius: "12px" }}
           animate={{
             filter: isHovered
-              ? "grayscale(100%) brightness(0.6) blur(3px)"
+              ? "grayscale(50%) brightness(0.6) blur(3px)"
               : "grayscale(0%) brightness(1) blur(0px)",
           }}
           transition={{ duration: 0.4 }}

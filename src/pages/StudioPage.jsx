@@ -31,9 +31,9 @@ export default function StudioPage() {
   ];
 
   const team = [
-    { name: "Jahanzaib Aijaz", role: "Founder & Lead Architect", img: `${process.env.PUBLIC_URL}/images/jahanzaib.jpg` },
-    { name: "Naveed Ishtiaq Malik", role: "Project Manager", img: "/images/naveed.png" },
-    { name: "Faizan Shafi Bhat", role: "Structural Engineer", img: "/images/faizan.jpg" },
+    { name: "JAHANZAIB BHAT", role: "Founder & Principle Architect", img: `${process.env.PUBLIC_URL}/images/jahanzaib.jpg` },
+    { name: "NAVEED MALIK", role: "Project Manager", img: `${process.env.PUBLIC_URL}/images/naveed.jpg` },
+    { name: "FAIZAN BHAT", role: "Structural Engineer", img: `${process.env.PUBLIC_URL}/images/faizan.jpg` },
   ];
 
   const gallery = ["/images/studio1.jpg", "/images/studio2.jpg", "/images/studio3.jpg"];
@@ -56,7 +56,7 @@ export default function StudioPage() {
         animate="visible"
         variants={fadeUp}
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">OUR STORY</h1>
+        <h1 className="text-4xl md:text-4xl font-bold text-gray-800 mb-4 monument">ABOUT US</h1>
         <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
           At JZB STUDIOZ, we create architecture that blends innovation, sustainability, and timeless design.
         </p>
@@ -88,7 +88,7 @@ export default function StudioPage() {
         animate="visible"
         variants={staggerContainer}
       >
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">THE BEES</h2>
+        <h2 className="text-4xl monument font-bold text-gray-800 mb-8 text-center">THE BEES</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {team.map((member, idx) => (
             <motion.div
@@ -128,7 +128,7 @@ export default function StudioPage() {
         animate="visible"
         variants={staggerContainer}
       >
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">OUR SPACE</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center monument">OUR SPACE</h2>
         <div className="grid md:grid-cols-3 gap-4">
           {gallery.map((src, idx) => (
             <motion.img

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Monument Extended";
+  src: url("/fonts/MonumentExtended-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.monument {
+  font-family: "Monument Extended", sans-serif;
+  letter-spacing: 2px; /* increase gap */
+  
+}
