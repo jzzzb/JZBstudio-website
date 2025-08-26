@@ -35,7 +35,7 @@ const ServicesSection = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
         <motion.h2
-          className="core-services-title text-4xl text-center mb-12 font-bold text-black"
+          className="core-services-title text-4xl text-center mb-12 font-bold monument text-black"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

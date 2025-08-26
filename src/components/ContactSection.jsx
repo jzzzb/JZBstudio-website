@@ -35,7 +35,7 @@ const ContactSection = () => {
       <div className="py-20 bg-transparent backdrop-blur-sm rounded-xl shadow-inner mt-10 border border-white/10">
         <div className="max-w-2xl mx-auto px-6">
           <motion.h2
-            className="core-services-title text-2xl md:text-3xl lg:text-4xl text-center mb-12 font-bold text-black"
+            className="core-services-title text-4xl monument md:text-3xl lg:text-4xl text-center mb-12 font-bold text-black"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -111,7 +111,7 @@ const ContactSection = () => {
       {/* Map Section */}
       <div className="max-w-5xl mx-auto mt-16 px-6 mb-20">
         <motion.h2
-          className="core-services-title text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 text-black"
+          className="core-services-title text-4xl monument md:text-3xl lg:text-4xl font-bold text-center mb-8 text-black"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

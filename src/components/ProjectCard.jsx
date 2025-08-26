@@ -29,7 +29,7 @@ const ProjectCard = ({ project, onSelectProject }) => {
       onClick={() => onSelectProject(project)}
     >
       <motion.div
-        className="relative rounded-xl overflow-hidden shadow-lg"
+        className="relative rounded-xl max-h-[60vh] overflow-hidden shadow-lg"
         style={{ scale }}
       >
         {/* Project image */}

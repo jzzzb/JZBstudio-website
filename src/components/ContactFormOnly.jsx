@@ -6,7 +6,7 @@ const ContactFormOnly = () => {
     <section className="mt-0">
       <div className="py-20 bg-transparent backdrop-blur-sm rounded-xl shadow-inner mt-10 border border-white/10 max-w-2xl mx-auto px-6">
         <motion.h2
-          className="core-services-title text-3xl md:text-4xl lg:text-4xl 
+          className="core-services-title text-4xl md:text-4xl lg:text-4xl monument
              text-center mb-12 font-bold text-black leading-snug"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

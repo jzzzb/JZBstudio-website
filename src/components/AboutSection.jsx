@@ -11,7 +11,7 @@ const AboutSection = () => {
       >
         {/* Title */}
         <motion.h2
-          className="core-services-title text-4xl mb-8 font-bold text-black"
+          className="core-services-title text-4xl mb-8 font-bold text-black monument" 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

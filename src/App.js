@@ -1,19 +1,22 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import './font.css';
 
 import ScrollToTop from "./ScrollToTop";
-import Navbar from "./components/Navbar"; // Ensure this exists and is imported
+import Navbar from "./components/Navbar";
+import PopUp from "./components/PopUp"; // 👈 import your PopUp
 
 import Homepage from "./pages/HomePage";
 import Project from "./pages/ProjectsPage";
 import Aboutpage from "./pages/AboutPage";
 import ServicePage from "./pages/ServicePage";
 import CareerPage from "./pages/CareerPage";
-import ContactPage from "./pages/ContactPage";// App.js
-import StudioPage from "./pages/StudioPage"; // Add this import
-
-
+import ContactPage from "./pages/ContactPage";
+import StudioPage from "./pages/StudioPage";
+import ArchPage from "./pages/ArchPage";
+import BlogPage from "./pages/BlogPage";
+import ElementsPage from "./pages/ElementsPage";
 
 // Animation variants
 const pageVariants = {
@@ -61,15 +64,22 @@ function App() {
         >
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Homepage />} />
+            <Route path="home" element={<Homepage />} />
             <Route path="/projects" element={<Project />} />
             <Route path="/about" element={<Aboutpage />} />
             <Route path="/services" element={<ServicePage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/studio" element={<StudioPage/>} />
-            <Route path="/Careers" element={<CareerPage/>} />
+            <Route path="/studio" element={<StudioPage />} />
+            <Route path="/careers" element={<CareerPage />} />
+            <Route path="/blogs" element={<BlogPage />} />
+            <Route path="/projects/architecture" element={<ArchPage />} />
+            <Route path="/projects/elements" element={<ElementsPage />} />
           </Routes>
         </motion.div>
       </AnimatePresence>
+
+      {/* 👇 PopUp will appear on every page */}
+      <PopUp />
     </>
   );
 }
