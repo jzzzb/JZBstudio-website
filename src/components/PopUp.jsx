@@ -10,9 +10,11 @@ export default function PopUp() {
   const [emailError, setEmailError] = useState("");
   const [modalMsg, setModalMsg] = useState("");
 
-  // simple form state (uncontrolled is fine too)
+  // proper form state
   const [form, setForm] = useState({
     name: "",
+    projectType: "",
+    siteArea: "",
     email: "",
     countryCode: "1",
     phone: "",
@@ -40,13 +42,11 @@ export default function PopUp() {
   );
 
   useEffect(() => {
-    // if user closed earlier, keep the tab visible but the card closed
     const closedBefore = localStorage.getItem(STORAGE_KEY) === "true";
     if (closedBefore) {
       setShowTab(true);
       setIsOpen(false);
     } else {
-      // reveal the tab after a short delay
       const t = setTimeout(() => setShowTab(true), 500);
       return () => clearTimeout(t);
     }
@@ -79,15 +79,20 @@ export default function PopUp() {
     }
     setEmailError("");
 
-    // pretend to send
-    console.log("Lead:", form);
+    console.log("Lead Submitted:", form);
 
     setModalMsg(
       "Thank you for your interest! We will contact you shortly to provide a quote."
     );
-    closePopup(); // hide the card after submit
-    // reset form (optional)
-    setForm({ name: "", email: "", countryCode: "1", phone: "" });
+    closePopup();
+    setForm({
+      name: "",
+      projectType: "",
+      siteArea: "",
+      email: "",
+      countryCode: "1",
+      phone: "",
+    });
   }
 
   return (
@@ -103,7 +108,6 @@ export default function PopUp() {
             transition={{ duration: 0.25 }}
             onClick={openPopup}
             className="fixed bottom-6 right-6 z-[1000] flex items-center bg-gray-900 text-white py-2 px-4 rounded-full shadow-lg hover:bg-gray-800 transition"
-            aria-label="Open quote form"
           >
             <svg
               className="w-5 h-5 mr-2"
@@ -127,7 +131,6 @@ export default function PopUp() {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* light mask for click outside feel on small screens */}
             <motion.div
               key="mask"
               className="fixed inset-0 z-[1000]"
@@ -153,9 +156,13 @@ export default function PopUp() {
                 <button
                   onClick={closePopup}
                   className="text-gray-400 hover:text-gray-600 transition"
-                  aria-label="Close"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -175,40 +182,33 @@ export default function PopUp() {
                 </p>
 
                 <form onSubmit={onSubmit} className="space-y-4">
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Full Name"
-                      value={form.name}
-                      onChange={onChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      name="Project Type"
-                      placeholder="Project Type"
-                      value={form.name}
-                      onChange={onChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="number"
-                      name="Site Area"
-                      placeholder="Site Area in SqM"
-                      value={form.name}
-                      onChange={onChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
-                    />
-                  </div>
-
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    value={form.name}
+                    onChange={onChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500"
+                  />
+                  <input
+                    type="text"
+                    name="projectType"
+                    placeholder="Project Type"
+                    value={form.projectType}
+                    onChange={onChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500"
+                  />
+                  <input
+                    type="number"
+                    name="siteArea"
+                    placeholder="Site Area in SqM"
+                    value={form.siteArea}
+                    onChange={onChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500"
+                  />
                   <div>
                     <input
                       type="email"
@@ -217,19 +217,18 @@ export default function PopUp() {
                       value={form.email}
                       onChange={onChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500"
                     />
                     {emailError && (
                       <p className="text-sm text-red-500 mt-1">{emailError}</p>
                     )}
                   </div>
-
                   <div className="flex space-x-2">
                     <select
                       name="countryCode"
                       value={form.countryCode}
                       onChange={onChange}
-                      className="w-1/3 px-2 py-2 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                      className="w-1/3 px-2 py-2 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-sky-500"
                     >
                       {countries.map((c) => (
                         <option key={c.code} value={c.code}>
@@ -237,7 +236,6 @@ export default function PopUp() {
                         </option>
                       ))}
                     </select>
-
                     <input
                       type="tel"
                       name="phone"
@@ -245,13 +243,12 @@ export default function PopUp() {
                       value={form.phone}
                       onChange={onChange}
                       required
-                      className="w-2/3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                      className="w-2/3 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky-500"
                     />
                   </div>
-
                   <button
                     type="submit"
-                    className="w-full bg-sky-600 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:bg-sky-700 transition"
+                    className="w-full bg-gray-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-gray-700 transition"
                   >
                     Request a Quote
                   </button>
@@ -283,7 +280,6 @@ export default function PopUp() {
               <button
                 className="absolute top-2 right-3 text-gray-400 hover:text-gray-600"
                 onClick={() => setModalMsg("")}
-                aria-label="Close modal"
               >
                 &times;
               </button>

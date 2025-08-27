@@ -15,7 +15,7 @@ const ArchPage = () => {
       thumbnail: `${process.env.PUBLIC_URL}/images/Canteliver House/canteliver2.jpg`,
       images: [
         `${process.env.PUBLIC_URL}/images/Canteliver House/canteliver2.jpg`,
-        `${process.env.PUBLIC_URL}/images/Canteliver House/canteliver2.jpg`,
+        `${process.env.PUBLIC_URL}/images/Canteliver House/canteliver3.jpg`,
       ],
     },
     {
@@ -68,6 +68,16 @@ const ArchPage = () => {
     },
     {
       id: 6,
+      title: "RESIDENCE NECTAR",
+      description:
+        "Healing architecture with natural light, ventilation, and efficient circulation.",
+      thumbnail: `${process.env.PUBLIC_URL}/images/Nectar/nectar1.jpg`,
+      images: [
+        `${process.env.PUBLIC_URL}/images/Nectar/nectar1.jpg`,
+      ],
+    },
+    {
+      id: 7,
       title: "MALL 87",
       description:
         "Healing architecture with natural light, ventilation, and efficient circulation.",

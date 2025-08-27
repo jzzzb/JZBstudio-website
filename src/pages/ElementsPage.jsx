@@ -9,37 +9,15 @@ const ArchPage = () => {
   const projects = [
     {
       id: 1,
-      title: "CANTELIVER HOUSE",
+      title: "FLOATING STAIRCASE",
       description:
         "A modern villa blending traditional Kashmiri architecture with sleek modern finishes.",
-      thumbnail: `${process.env.PUBLIC_URL}/images/Canteliver House/canteliver2.jpg`,
+      thumbnail: `${process.env.PUBLIC_URL}/images/Elements/floatingstair1.jpg`,
       images: [
-        `${process.env.PUBLIC_URL}/images/Canteliver House/canteliver2.jpg`,
-        `${process.env.PUBLIC_URL}/images/Canteliver House/canteliver2.jpg`,
+        `${process.env.PUBLIC_URL}/images/Elements/floatingstair1.jpg`,
       ],
     },
-    {
-      id: 2,
-      title: "Corporate Office Tower",
-      description:
-        "30-floor corporate HQ with sustainable design and an innovative glass façade.",
-      thumbnail: `${process.env.PUBLIC_URL}/projects/office/thumb.jpg`,
-      images: [
-        `${process.env.PUBLIC_URL}/projects/office/1.jpg`,
-        `${process.env.PUBLIC_URL}/projects/office/2.jpg`,
-      ],
-    },
-    {
-      id: 3,
-      title: "500-Bedded Hospital – Bandipora",
-      description:
-        "Healing architecture with natural light, ventilation, and efficient circulation.",
-      thumbnail: `${process.env.PUBLIC_URL}/projects/hospital/thumb.jpg`,
-      images: [
-        `${process.env.PUBLIC_URL}/projects/hospital/1.jpg`,
-        `${process.env.PUBLIC_URL}/projects/hospital/2.jpg`,
-      ],
-    },
+    
     // 👉 Continue until project 21
   ];
 
@@ -67,10 +45,10 @@ const ArchPage = () => {
       {/* Project Grid */}
       <div className="flex-1 px-6 py-16">
         <h2 className="text-4xl font-bold text-center mb-12 monument" >
-          JZB ELEMENTS
+          ELEMENTS
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -81,7 +59,7 @@ const ArchPage = () => {
               <img
                 src={project.thumbnail}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-50 object-cover"
               />
               <div className="p-4">
                 <h2 className="text-xl font-semibold">{project.title}</h2>
@@ -101,7 +79,7 @@ const ArchPage = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white rounded-2xl shadow-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
+              className="bg-white rounded-2xl shadow-lg max-w-7xl w-full max-h-[85vh] overflow-y-auto relative"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
@@ -114,22 +92,15 @@ const ArchPage = () => {
                 ✕
               </button>
 
-              {/* Hero Image */}
-              <img
-                src={selectedProject.thumbnail}
-                alt={selectedProject.title}
-                className="w-full h-64 md:h-80 object-cover rounded-t-2xl"
-              />
-
               {/* Content */}
               <div className="p-6">
-                <h2 className="text-3xl font-bold mb-4">
+                <h2 className="text-5xl text-gray-600 font mb-4 monument">
                   {selectedProject.title}
                 </h2>
                 <p className="text-gray-600 mb-6">{selectedProject.description}</p>
 
                 {/* Image Gallery */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {selectedProject.images.map((img, index) => (
                     <img
                       key={index}
